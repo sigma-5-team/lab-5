@@ -26,27 +26,29 @@ function getTextAreaTxt(elem) {
  * */
 function createUserMessage(elem) {
     // creating a new div for storing the message
-    let new_msg = document.createElement("div");
+    let new_msg_div = document.createElement("div");
 
     // getting textarea id, will be used for determining users
     let elem_id = elem.getAttribute("id");
 
-    // adding bootstrap classes to the block, based on users
+    // Adding bootstrap classes to the block, based on users
     if (elem_id === 'user1') {
-        new_msg.classList.add("col", "col-12", "bg-light", "p-3", "mb-2", "align-self-start");
+        new_msg_div.classList.add("col", "col-12", "bg-light", "p-3", "mb-2", "rounded-2", "align-items-start");
     } else if (elem_id === 'user2') {
-        new_msg.classList.add("col", "col-12", "offset-1", "bg-primary", "text-light",
-                "p-3", "mb-2", "ml-auto", "align-self-end");
+        new_msg_div.classList.add("col", "col-12", "offset-1",
+            "bg-primary", "text-light", "p-3", "mb-2", "rounded-2", "align-items-end");
     } else {
-        alert('smth wrong')
+        alert('Something went wrong');
     }
 
     let msg_txt = getTextAreaTxt(elem);
 
     // if content is empty, do nothing
     if(msg_txt !== '') {
-        new_msg.innerHTML = msg_txt ;
-        overall_chat.appendChild(new_msg);
+        new_msg_div.innerHTML = `<strong>${elem_id}: </strong>` + "<br>" + msg_txt;
+        overall_chat.appendChild(new_msg_div);
+    } else {
+        alert("Empty message")
     }
 
     // setting empty textarea after submitting
