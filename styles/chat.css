@@ -2,6 +2,11 @@ body {
     background: lightgray;
 }
 
+header {
+    position: sticky;
+    top: 0;
+}
+
 .col {
     max-width: 90%;
     word-break: break-word;

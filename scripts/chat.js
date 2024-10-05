@@ -33,9 +33,9 @@ function createUserMessage(elem) {
 
     // Adding bootstrap classes to the block, based on users
     if (elem_id === 'user1') {
-        new_msg_div.classList.add("col", "col-12", "bg-light", "p-3", "mb-2", "rounded-2", "align-items-start");
+        new_msg_div.classList.add("col", "col-6", "bg-light", "p-3", "mb-2", "rounded-2", "align-items-start");
     } else if (elem_id === 'user2') {
-        new_msg_div.classList.add("col", "col-12", "offset-1",
+        new_msg_div.classList.add("col", "col-6", "offset-6",
             "bg-primary", "text-light", "p-3", "mb-2", "rounded-2", "align-items-end");
     } else {
         alert('Something went wrong');
@@ -45,7 +45,7 @@ function createUserMessage(elem) {
 
     // if content is empty, do nothing
     if(msg_txt !== '') {
-        new_msg_div.innerHTML = `<strong>${elem_id}: </strong>` + "<br>" + msg_txt;
+        new_msg_div.innerText = `${elem_id}:` + "\n" + msg_txt;
         overall_chat.appendChild(new_msg_div);
     } else {
         alert("Empty message")
