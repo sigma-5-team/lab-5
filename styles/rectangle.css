@@ -1,0 +1,9 @@
+body {
+    font-family: Lato, "Roboto Thin", serif;
+}
+.container {
+    margin: 20px;
+}
+label {
+    margin-right: 10px;
+}
