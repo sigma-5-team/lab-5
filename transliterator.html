@@ -8,10 +8,28 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="styles/transliterator.css">
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <h2>Український текст:</h2>
+    <textarea id="ukrainianText" placeholder="Введіть український текст"></textarea>
 
+    <h2>Транслітерований текст:</h2>
+    <textarea id="transliteratedText" readonly></textarea>
+</div>
     <script src="scripts/transliterator.js"></script>
 </body>
 </html>
