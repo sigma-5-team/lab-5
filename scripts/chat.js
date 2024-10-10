@@ -16,7 +16,11 @@ let overall_chat = document.querySelector(".overall-chat");
  * @param elem textarea (but can be another, as JS is not strictly-type)
  * */
 function getTextAreaTxt(elem) {
-    return elem.value;
+    if(elem.tagName.toLowerCase() === 'textarea') {
+        return elem.value;
+    }
+
+    return null;
 }
 
 /**
@@ -31,14 +35,14 @@ function createUserMessage(elem) {
     // getting textarea id, will be used for determining users
     let elem_id = elem.getAttribute("id");
 
-    // add classes to div
-    new_msg_div.classList.add("col", "col-lg-8", "col-8", "mb-2", "rounded-2", "p-3")
+    // add classes, which are used for both users' messages
+    new_msg_div.classList.add("col", "col-lg-8", "col-10", "mb-2", "rounded-2", "p-3")
 
     // Adding bootstrap classes to the block, based on users
     if (elem_id === 'user1') {
-        new_msg_div.classList.add("offset-lg-1", "offset-1", "bg-light");
+        new_msg_div.classList.add("offset-lg-1", "bg-light");
     } else if (elem_id === 'user2') {
-        new_msg_div.classList.add("offset-lg-3", "offset-3", "bg-primary", "text-light");
+        new_msg_div.classList.add("offset-lg-3", "offset-2", "bg-primary", "text-light");
     } else {
         alert('Something went wrong');
     }
