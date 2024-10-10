@@ -8,6 +8,7 @@ function calculateRectangle() {
         document.getElementById('perimeter').innerText = '-';
         document.getElementById('area').innerText = '-';
         document.getElementById('diagonal').innerText = '-';
+        return;
     }
 
     // Розрахунки
