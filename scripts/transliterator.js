@@ -42,7 +42,7 @@ function transliterateText(text) {
 
     for (let char of text) {
         // Застосовуємо правило транслітерації, якщо символ є в об'єкті правил
-        transliteratedText += transliterationRules[char] !== undefined ? transliterationRules[char] : char;
+        transliteratedText += (transliterationRules[char] !== undefined) ? transliterationRules[char] : char;
     }
 
     return transliteratedText;
